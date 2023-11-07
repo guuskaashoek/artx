@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>ARTX Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="http://guus.space/assets/raw/logo-artx.png" type="image/x-icon">
+  </head>
+  <body>
+  
+      <a href="https://guuslab.com/artx"><img src="http://guus.space/assets/raw/artx-logo.png" alt="logo"></a>
+  
+      <div id="editorWrapper">
+        <pre id="lineNumbers">1</pre>
+        <textarea id="editor" spellcheck="false" placeholder="start with your dimensions of the file you want. more info on guuslab.com/artx"></textarea>
+      
+      <div class="buttons">
+      <button class="run" onclick="runCode()">Run Code</button>
+  
+      <button class="color" onclick="extractColorsFromEditor()">Extract Colors</button>
+  
+      <input type="file" id="fileInput" style="display:none;" accept=".artx">
+      <button class="import" onclick="document.getElementById('fileInput').click()">Import ARTX</button>
+      
+      <button class="export" onclick="exportGlab()">Export as ARTX</button>
+  
+      <button class="exportPng" onclick="exportAsPNG()">Export as PNG</button>
+  
+      <button class="exportSvg" onclick="exportAsSVG()">Export as SVG</button>
+      </div>
+     
+      <canvas id="canvas"></canvas> 
+  
+      <div id="colorInputSection">
+        <input type="text" id="colorInput" placeholder="Enter HEX color code">
+        <button id="add" onclick="addColorFromInput()">Add Color</button>
+        <div id="colorStorage">
+        <!-- colors -->
+      </div>
+      </div>
+  
+      <div id="customColorPicker">
+        <label for="hue"></label><input type="range" id="hue" min="0" max="360">
+        <label for="saturation"></label><input type="range" id="saturation" min="0" max="100" style="background: linear-gradient(to right, rgb(128, 128, 128), rgb(64, 191, 191));">
+        <label for="lightness"></label><input type="range" id="lightness" min="0" max="100" style="background: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 255, 255), rgb(255, 255, 255));">
+        <div id="colorPreview" style="background-color: rgb(64, 191, 191);"></div>
+        <button id="add" onclick="addSelectedColor()">Add Color</button>
+      </div>
+      
+       
+  </div>
+  <script src="script.js"></script>
+  <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon="{&quot;rayId&quot;:&quot;81681c12aa890a77&quot;,&quot;version&quot;:&quot;2023.8.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;4dab32f8b92d4d23b26cd55f8dd03609&quot;,&quot;si&quot;:100}" crossorigin="anonymous"></script>
+  
+  
+  </body></html>
